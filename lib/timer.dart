@@ -29,7 +29,7 @@ class _TimerState extends State<Timer> {
   }
 
   void formatTime(int timer) {
-    textSeconds.text = ((timer / 1000) % 60).round().toString();
+    textSeconds.text = ((timer / 1000) % 60).toInt().toString();
     textMinutes.text = ((timer / (1000 * 60)) % 60).toInt().toString();
   }
 
