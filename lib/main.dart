@@ -1,17 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:ts_5_2_1_stoppuhr/counter.dart';
 import 'package:ts_5_2_1_stoppuhr/themes/light_theme.dart';
+import 'package:ts_5_2_1_stoppuhr/timer.dart';
 
 void main() {
   runApp(const MainApp());
 }
 
-const sizebetweenElements = SizedBox(
-  width: 12,
-  height: 12,
-);
-
-class MainApp extends StatelessWidget {
+class MainApp extends StatefulWidget {
   const MainApp({super.key});
+
+  @override
+  State<MainApp> createState() => _MainAppState();
+}
+
+class _MainAppState extends State<MainApp> {
+  final List<Widget> _screens = [const Timer(), const Counter()];
+  int _selectedIndex = 0;
+
+  void setScreen(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -21,42 +32,16 @@ class MainApp extends StatelessWidget {
       theme: GlobalThemeData.lightThemeData,
       darkTheme: GlobalThemeData.darkThemeData,
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text("Stoppuhr"),
-          //foregroundColor: Theme.of(context).colorScheme.onPrimary,
-          //backgroundColor: Theme.of(context).colorScheme.primary,
-        ),
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  "12",
-                  style: Theme.of(context).textTheme.displayLarge,
-                ),
-                sizebetweenElements,
-                Text("s", style: Theme.of(context).textTheme.displayLarge)
-              ],
-            ),
-            sizebetweenElements,
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                ElevatedButton(
-                    onPressed: () {
-                      print(Theme.of(context).textTheme.displayLarge);
-                    },
-                    child: const Text("Start")),
-                ElevatedButton(onPressed: () {}, child: const Text("Stopp")),
-                ElevatedButton(onPressed: () {}, child: const Text("Clear")),
-              ],
-            )
-          ],
-        ),
-      ),
+          bottomNavigationBar: BottomNavigationBar(
+            items: const [
+              BottomNavigationBarItem(icon: Icon(Icons.timer), label: "Timer"),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.watch), label: "Stoppuhr")
+            ],
+            currentIndex: _selectedIndex,
+            onTap: setScreen,
+          ),
+          body: _screens[_selectedIndex]),
     );
   }
 }
