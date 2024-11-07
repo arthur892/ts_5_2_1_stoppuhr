@@ -8,7 +8,7 @@ It primarily uses async and await, so the time measurement isn’t perfectly acc
 
 # Screenshots
 
-<img src= "https://github.com/arthur892/ts_5_2_1_stoppuhr/blob/main/screenshots/Konsole.png" height ="400"> <img src= "https://github.com/arthur892/ts_5_2_1_stoppuhr/blob/main/screenshots/Konsole.png" height ="400">
+<img src= "https://github.com/arthur892/ts_5_2_1_stoppuhr/blob/main/screenshots/counter.png" height ="400"> <img src= "https://github.com/arthur892/ts_5_2_1_stoppuhr/blob/main/screenshots/timer.png" height ="400">
 
 ## Technologies
 
