@@ -117,6 +117,7 @@ class _TimerState extends State<Timer> {
                   textAlign: TextAlign.center,
                   style: Theme.of(context).textTheme.displayLarge,
                   keyboardType: TextInputType.number,
+                  textInputAction: TextInputAction.next,
                   controller: textMinutes,
                   onTap: () {
                     textMinutes.text = "";
@@ -130,6 +131,7 @@ class _TimerState extends State<Timer> {
                   textAlign: TextAlign.center,
                   style: Theme.of(context).textTheme.displayLarge,
                   keyboardType: TextInputType.number,
+                  textInputAction: TextInputAction.done,
                   controller: textSeconds,
                   onTap: () {
                     textSeconds.text = "";
