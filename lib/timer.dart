@@ -100,9 +100,6 @@ class _TimerState extends State<Timer> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Center(child: Text("Timer")),
-      ),
       backgroundColor: ScaffoldColor,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
