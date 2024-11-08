@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ts_5_2_1_stoppuhr/timer_validator.dart';
 
 class Timer extends StatefulWidget {
   const Timer({super.key});
@@ -61,13 +62,13 @@ class _TimerState extends State<Timer> {
     int seconds = 0;
     int minutes = 0;
 
-    if (textMinutes.text.contains(RegExp(r'[0-9]'))) {
+    if (TimerValidator.validInput(textMinutes.text)) {
       minutes = int.tryParse(textMinutes.text)!;
     } else {
       minutes = 0;
     }
 
-    if (textSeconds.text.contains(RegExp(r'[0-9]'))) {
+    if (TimerValidator.validInput(textSeconds.text)) {
       seconds = int.tryParse(textSeconds.text)!;
     } else {
       seconds = 0;

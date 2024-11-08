@@ -1,7 +1,7 @@
 # Tasksheet 5.2.1 Stoppuhr
 
 # Development Process: 
-The app was developed as part of a 9-month training program at the AppAkademie.
+The app was developed as part of a 9-month training program at the [AppAkademie](https://www.app-akademie.com/).
 
 # Disclaimer:
 It primarily uses async and await, so the time measurement isn’t perfectly accurate.
